@@ -1,7 +1,7 @@
 site_name: omnibenchmark
 site_url: https://omnibenchmark.org/
 repo_url: https://github.com/omnibenchmark/omnibenchmark
-repo_name: omb-site@gitlab
+repo_name: omnibenchmark
 site_description: Omnibenchmark is a platform for open, continuous community-driven scientific benchmarking.
  
 nav:
@@ -45,7 +45,7 @@ plugins:
       type: date
       enable_creation_date: false
   - bibtex:
-      bib_file: "refs.bib"
+      bib_file: "docs/refs.bib"
 
 markdown_extensions:
   - mkdocs-click
