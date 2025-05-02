@@ -1,0 +1,22 @@
+name: Publish mkdocs via GitHub Pages
+on:
+  push:
+    branches:
+      - mkdocs
+
+jobs:
+  build:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v2
+
+      - name: Deploy docs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@a31c6b1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CUSTOM_DOMAIN: omnibenchmark.org
+          CONFIG_FILE: docs/mkdocs.yml
+          EXTRA_PACKAGES: build-base
+          REQUIREMENTS: docs/requirements.txt
